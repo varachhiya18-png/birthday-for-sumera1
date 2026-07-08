@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Sumera ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<div class="container">
+
+<h1>🎂 Happy Birthday 🎂</h1>
+
+<h2>Dear Sumera ❤️</h2>
+
+<img src="images/photo1.jpg" class="profile">
+
+<p id="typing"></p>
+
+<div id="countdown"></div>
+
+<a href="memories.html" class="btn">
+Start Celebration 🎉
+</a>
+
+</div>
+
+<script>
+const text="Every birthday is special, but yours is my favourite. May Allah bless you with happiness, success and endless smiles. ❤️";
+
+let i=0;
+
+function typing(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typing,45);
+}
+}
+
+typing();
+
+const target=new Date("July 18, 2026 00:00:00").getTime();
+
+setInterval(()=>{
+const now=new Date().getTime();
+
+const gap=target-now;
+
+const d=Math.floor(gap/(1000*60*60*24));
+const h=Math.floor((gap%(1000*60*60*24))/(1000*60*60));
+const m=Math.floor((gap%(1000*60*60))/(1000*60));
+const s=Math.floor((gap%(1000*60))/1000);
+
+document.getElementById("countdown").innerHTML=
+"⏳ "+d+" Days "+h+" Hours "+m+" Minutes "+s+" Seconds";
+
+},1000);
+
+for(let j=0;j<35;j++){
+
+let heart=document.createElement("span");
+
+heart.innerHTML="❤️";
+
+heart.className="heart";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*5+4)+"s";
+
+document.body.appendChild(heart);
+
+}
+</script>
+
+</body>
+</html>
